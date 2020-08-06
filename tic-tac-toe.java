@@ -15,21 +15,25 @@ class tictactoe {
             // Player 1 Move
             playerMove(board,record, 'X', move,1);
             move++;
+            
             // Check player 1 win condition
             if(checkWin(board,record[move-1][0],record[move-1][1],'X')) {
                 System.out.println("Player 1 win!");
                 unfinished = false;
                 break;
             }
+
             // Check draw condition
             if(record[(n*n)-1][0]!= (char) 0){
                 System.out.println("Draw!");
                 unfinished = false;
                 break;
             }
+
             // Player 2 Move
             playerMove(board,record, 'O', move,2);
             move++;
+
             // Check player 2 win condition
             if(checkWin(board,record[move-1][0],record[move-1][1],'O')) {
                 System.out.println("Player 2 win!");
@@ -56,7 +60,7 @@ class tictactoe {
                 board[playerRow][playerCol] = playerChar;
                 playerMove = false;
             }
-        displayBoard(board);
+            displayBoard(board);
         }
     }
 
@@ -65,12 +69,8 @@ class tictactoe {
         System.out.println("Current Board");
         for(int i = 0;i <n;i++){
             for(int j = 0; j<n;j++){
-                if(j == n-1){
-                    System.out.print("|" + board[i][j] +"|");
-                }else{
-                    System.out.print("|" + board[i][j] );
-                }
-                
+                if(j == n-1) System.out.print("|" + board[i][j] +"|");
+                else System.out.print("|" + board[i][j] );
             }
             System.out.println();
         }
